@@ -52,20 +52,32 @@ Description : Responsive Layouts.
       }
 
       .row {
+        /* 
+		Floated divs act as if their content is removed and their height is affecfted. Thus, displaying it as a table ensures that the height
+		of the divs are relevant to the content inside them.
+		*/
         display: table;
       }
 
       .large,
       .medium,
       .small {
-        /*  Not needed for our implementation */
+        /*  
+		Not needed for our implementation 
+		*/
       }
 
       .gap {
+        /* 
+		Rem units that are responsive to increase the size of the gap depending on the width of the device 
+		*/
         padding-bottom: 3rem;
       }
 
       @media screen and (min-width: 769px) {
+        /* 
+		If 70/30, the floated divs would be on top of each other. Thus, they are scaled like this instead to ensure they are horizontal.
+		*/
         .medium {
           width: 68%;
           float: right;
@@ -83,7 +95,10 @@ Description : Responsive Layouts.
           width: 100%;
         }
 
-        /* Note for TA: If we used 70/30 ratio due to the padding they would end up stacked vertically. Thus, they are scaled like this instead to ensure they are horizontal. */
+        /* 
+		Note for TA: If we used 60/40 ratio due to the padding they would end up stacked vertically. 
+		Thus, they are scaled like this instead to ensure they are horizontal. 
+		*/
         .medium {
           width: 53%;
           float: right;
@@ -101,6 +116,9 @@ Description : Responsive Layouts.
       }
 
       @media screen and (max-width: 480px) {
+        /* 
+		Removing the float and adding max-width. Also putting original padding of 10px back to the medium/small containers 
+		*/
         .medium {
           width: 100%;
           padding-left: 10px;
