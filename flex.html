@@ -1,6 +1,6 @@
 <!--
 =========================================================
-Name        : index.html
+Name        : flex.html
 Assignment  : Lab 4 Exercise C
 Author(s)   : Braden Huang, Burton Jong
 Submission  : February 7, 2024
@@ -48,16 +48,19 @@ Description : Flex Layouts.
 		}
         body { margin: 0; padding: 0; }
         img { max-width: 100%; height: auto; }
-        .container { 
-			display: flex;
+        .container {
+			/*Column flex to arrange header, content, footer, etc. in vertical order*/ 
+			display: flex;				
 			flex-direction: column;
 		 }
         .header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; width: 100%;}
 		.body { 
+			/*Align menu and text horizontally*/
 			display: flex;
 			flex-direction: row;
 		}
         .main { 
+			/* Vertical Stacking for articles of webpage */
 			padding: 15px; 
 			display: flex;
 			flex-direction: column;
@@ -65,13 +68,14 @@ Description : Flex Layouts.
         
         .news-item { padding: 10px; }
         .row { 
+			/* Ensures main content will wrap to new line once runs out of space */
 			display: flex;
 			flex-wrap: wrap;
 		}
         
 
-        @media screen and (min-width: 769px) {
-            .menu {width: 150px;}
+        @media screen and (min-width: 769px) { /* Desktop mode */
+            .menu {width: 750px;} /* Default value here was 150px but looked way smaller than example gif so was changed to larger */
 			.large { 
 				width: 100%;
 			}
@@ -83,12 +87,14 @@ Description : Flex Layouts.
 			 }       
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 768px) { /* tablet mode */
 			.body { 
+				/*menu and content vertically alligned */
 				width: 100%;
 				flex-direction: column;
 			}
             .menu ul { 
+				/*Make menu change from column to row when tablet mode or smaller */
 				display: flex;
 				flex-direction: row;
 			 }
@@ -105,11 +111,11 @@ Description : Flex Layouts.
 			   
         }
 
-        @media screen and (max-width: 480px) {
-            .news-item header h1 { font-size: 18px; }
+        @media screen and (max-width: 480px) {	/* Phone mode */
+            .news-item header h1 { font-size: 18px; } 
             .medium, .small { 
 				width: 100%;
-			 }
+			}
         }
     </style>
 </head>
