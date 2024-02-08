@@ -59,12 +59,13 @@ Description : Responsive Layouts.
         display: table;
       }
 
+      /* 
+		So that the 70/30, 60/40 ratio works.
+		*/
       .large,
       .medium,
       .small {
-        /*  
-		Not needed for our implementation 
-		*/
+        box-sizing: border-box;
       }
 
       .gap {
@@ -76,35 +77,30 @@ Description : Responsive Layouts.
 
       @media screen and (min-width: 769px) {
         /* 
-		If 70/30, the floated divs would be on top of each other. Thus, they are scaled like this instead to ensure they are horizontal.
+		70/30 ratio for small/medium
 		*/
+
         .medium {
-          width: 68%;
+          width: 70%;
           float: right;
-          padding-left: 3px;
         }
         .small {
-          width: 27%;
+          width: 30%;
           float: left;
-          padding-right: 3px;
         }
       }
 
       @media screen and (max-width: 768px) {
-        .large {
-          width: 100%;
-        }
-
         /* 
-		Note for TA: If we used 60/40 ratio due to the padding they would end up stacked vertically. 
-		Thus, they are scaled like this instead to ensure they are horizontal. 
+		60/40 ratio for small/medium
 		*/
+
         .medium {
-          width: 53%;
+          width: 60%;
           float: right;
         }
         .small {
-          width: 35%;
+          width: 40%;
           float: left;
         }
         .menu {
@@ -117,16 +113,14 @@ Description : Responsive Layouts.
 
       @media screen and (max-width: 480px) {
         /* 
-		Removing the float and adding max-width. Also putting original padding of 10px back to the medium/small containers 
+		Removing the float and adding max-width.
 		*/
         .medium {
           width: 100%;
-          padding-left: 10px;
           float: none;
         }
         .small {
           width: 100%;
-          padding-right: 10px;
           float: none;
         }
 
